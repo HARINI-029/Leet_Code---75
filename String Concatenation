@@ -1,0 +1,31 @@
+String concatenation :
+
+// basic to solve 1 question of 75 leetcode study
+
+char* concatenation (char*str1, char*str2)
+{
+int len1 = strlen(str1);
+int len2 = strlen (str2);
+
+int len3 = len1 +len2 + 1; // + 1 to hold the null 
+
+char * str3 = (char*) malloc ( len3 * sizeof (char));
+int i = 0,j =0;
+while (str1[i]!='\0')
+{
+str3[j] = str1[i];
+i++;
+j++;
+}
+
+ i = 0;
+while (str2[i]!='\0')
+{
+str3[j] = str2[i];
+i++;
+j++;
+}
+
+str3[j] = '\0';
+return str3;
+}
