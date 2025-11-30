@@ -1,0 +1,33 @@
+1. Merge String Alternately
+
+char * mergeAlternately(char * word1, char * word2){
+int len1 = strlen (word1);
+int len2 = strlen (word2);
+int len3 = len1 + len2 + 1;
+
+char * str3 = (char*) malloc(len3 * sizeof(char));
+
+int i =0,j=0,k =0;
+while (i<len1 && j <len2)
+{
+str3[k++] = word1[i++];
+str3[k++] = word2[j++];
+}
+while (i <len1)
+{
+str3[k++] = word1[i++];
+}
+
+while (j<len2)
+{
+str3[k++] = word2[j++];
+}
+
+str3[k++] = '\0';
+return str3;
+}
+
+
+
+
+
