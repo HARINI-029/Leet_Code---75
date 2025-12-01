@@ -1,0 +1,29 @@
+Minimum additons to make string valid: similar to leetcode 75 - 1 quetsion
+
+int addMinimum(char* word) {
+    
+    int insert = 0; // no . of additions to be made
+    int expect = 0; // considering 0 = a, 1 = b , 2 = c
+
+    for (int i =0; word[i]!= '\0';i++)
+    {
+        char ch = word[i];
+
+        while ((expect == 0 && ch!='a')|| (expect == 1 && ch!='b')|| (expect ==2 && ch!='c') )
+        {
+            insert ++;
+            expect = (expect + 1)% 3;
+        }
+        expect = (expect + 1)%3;
+    }
+
+    if (expect == 1)
+    {
+        insert+=2;
+    }
+    else if (expect ==2)
+    {
+        insert+=1;
+    }
+    return insert;
+}
